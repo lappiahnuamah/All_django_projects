@@ -15,10 +15,13 @@ def about(request):
     return render(request, 'resume/about.html', {"resume": resume})
 
 def blog(request):
-    context  =  {
-        'posts': Post.objects.all()
-    }
-    return render(request, 'resume/blog.html', context)
+    item_name = request.GET.get('item_name')
+    if item_name !='' and item_name is not None:
+        posts = posts.filter(title__icontains = item_name)
+    # context  =  {
+    #     'posts': Post.objects.all()
+    # }
+    return render(request, 'resume/blog.html', {'posts': Post.objects.all()})
 
 # class PostListView(ListView):
 #     model = Post
