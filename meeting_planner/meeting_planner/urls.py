@@ -1,4 +1,4 @@
-"""meetings_planner URL Configuration
+"""meeting_planner URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from website import views
+from website.views import welcome, date, about
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.welcome, name='welcome' ),
-    path('date/', views.date, name='date' ),
-    path('about/', views.about, name='about' ),
+    path('', welcome),
+    path('date/', date),
+    path('about/', about),
 ]

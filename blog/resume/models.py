@@ -12,7 +12,7 @@ class Resume(models.Model):
     Address = models.CharField(max_length=30)
     Phone = models.CharField(max_length=12)
     Email = models.CharField(max_length=30)
-    Github = models.CharField(max_length=30)
+    Github = models.CharField(max_length=35)
     Languages = models.CharField(max_length=30)
 
 
@@ -27,6 +27,12 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+
+class ContactForm(models.Model):
+    your_name = models.CharField(max_length=30)
+    your_email = models.EmailField()
+    your_subject = models.CharField(max_length=30)
+    your_message = models.TextField()
 
 
     
