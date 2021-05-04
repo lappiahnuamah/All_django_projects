@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-# from django.core.
+from django.urls import reverse
 
 # Create you(r models here.
 
@@ -33,10 +33,10 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    # def get_absolute_url(self):
-    #     return reverse("blog:post_detail",args=[self.publish.year,
-    #                                             self.publish.strftime('%m'),
-    #                                             self.publish.strftime('%d'),
-    #                                             self.slug])
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', args=[ str(self.publish.year),
+                                                   str(self.publish.strftime('%m')),
+                                                   str(self.publish.strftime('%d')),
+                                                   str(self.slug)])
     
     
