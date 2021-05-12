@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+     <section class="resume-section" id="blog">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Blog</h2>
+                    <div class="row">
+                        <div class="card mr-4" style="width: 22rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{blog.title}}</h5>
+                            <p class="card-text">{{blog.description}}</p>
+                            <a href="{% url 'index_blog' %}" class="btn btn-primary" >back</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <p>Last update at {{blog.date}}</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+{% endblock content %}
