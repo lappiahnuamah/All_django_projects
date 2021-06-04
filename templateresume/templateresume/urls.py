@@ -26,5 +26,5 @@ urlpatterns = [
     path('<int:blog_id>/', views.blog_detail, name='blog_detail'),
 
 ]
-urlpatterns+=static(settings.STATIC_URL)
-urlpatterns+=static(settings.MEDIA_URL)
+urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

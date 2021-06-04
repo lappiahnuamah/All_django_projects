@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!-- revolution slider -->
+      <div class="banner-slider">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-7">
+                  <div id="slider_main" class="carousel slide" data-ride="carousel">
+                     <!-- The slideshow -->
+                     <div class="carousel-inner">
+                     {% for image in images  %}
+                        <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %} ">
+                           <img src="{{image.image.url}}" alt="#" />
+                        </div>
+                     {% endfor %}
+                     </div>
+                     <!-- Left and right controls -->
+                     <a class="carousel-control-prev" href="#slider_main" data-slide="prev">
+                     <i class="fa fa-angle-left" aria-hidden="true"></i>
+                     </a>
+                     <a class="carousel-control-next" href="#slider_main" data-slide="next">
+                     <i class="fa fa-angle-right" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+               <div class="col-md-5">
+                  <div class="full slider_cont_section">
+                     <h4>More Featured in</h4>
+                     <h3>Tour Africa_360</h3>
+                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look</p>
+                     <div class="button_section">
+                        <a href="about.html">Read More</a>
+                        <a href="contact.html">Contact Us</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end revolution slider -->
+      <!-- About section --> 
+      <div class="section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="heading">
+                     <h3>About <span class="orange_color">Us</span></h3>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-6">
+                  <img src="{% static 'images/blog1.png' %}" alt="#" />
+               </div>
+               <div class="col-md-6">
+                  <div class="full blog_cont">
+                     <h4>The biggest and most awesome camera  of  year</h4>
+                     <h5>MAY 14 2019 5 READ</h5>
+                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row margin_top_30">
+               <div class="col-md-6">
+                  <img src="{% static 'images/blog2.png' %}" alt="#" />
+               </div>
+               <div class="col-md-6">
+                  <div class="full blog_cont">
+                     <h4>What 3 years of android taught me the hard way</h4>
+                     <h5>MAY 19 2019  5 READ</h5>
+                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row margin_top_30">
+               <div class="col-md-12">
+                  <div class="button_section full center margin_top_30">
+                     <a style="margin:0;" href="about.html">Read More</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end section -->
+      
+      <!--Comment section -->
+      <section class="layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="heading" style="padding-left: 15px;padding-right: 15px;">
+                     <h4 style="border-bottom: solid #333 1px;">Comments / 2</h4>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+               {% for comment in comments %}
+                  <div class="full comment_blog_line">
+                     <div class="row">
+                        <div class="col-md-1">
+                           <img src="{{comment.image.url}}" alt="#" />
+                        </div>
+                        <div class="col-md-9">
+                           <div class="full contact_text">
+                              <h3></h3>
+                              <h4>{{comment.title}}</h4>
+                              <p>{{comment.description}}
+                              </p>
+                           </div>
+                        </div>
+                        <div class="col-md-2">
+                           <a class="reply_bt" href="#">Reply</a>
+                        </div>
+                  {% endfor %}
+                     </div>
+                  </div>
+            <div class="row margin_top_30">
+               <div class="col-md-12 margin_top_30">
+                  <div class="heading" style="padding-left: 15px;padding-right: 15px;">
+                     <h4>Post : Your Comment</h4>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full comment_form">
+                     <form action="index.html">
+                        <fieldset>
+                           <div class="col-md-12">
+                              <div class="row">
+                                 <div class="col-md-6">
+                                    <input type="text" name="name" placeholder="Name" required="#" />
+                                    <input type="email" name="email" placeholder="Email" required="#" />
+                                 </div>
+                                 <div class="col-md-6">
+                                    <textarea placeholder="Comment"></textarea>
+                                 </div>
+                              </div>
+                              <div class="row margin_top_30">
+                                 <div class="col-md-12">
+                                    <div class="center">
+                                       <button>Send</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </fieldset>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end section -->
+      <!--  Blog section --> 
+      <div class="section layout_padding blog_blue_bg light_silver">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8 offset-md-2">
+                  <div class="heading">
+                     <h3>Blog</h3>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-8 offset-md-2">
+                  <div class="full">
+                     <div class="big_blog">
+                        <img class="img-responsive" src="{% static 'images/blog_1.png' %}" alt="#" />
+                     </div>
+                     <div class="blog_cont_2">
+                        <h3>Why do we use it</h3>
+                        <p class="sublittle">March 19 2019  5 READ</p>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters as opposed to using Content here content here making..</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end section -->
+      
+{% endblock content %}
+    
