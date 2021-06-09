@@ -25,9 +25,13 @@ urlpatterns = [
     path('about/', views.about, name="about"),
     path('blog/', views.blog, name="blog"),
     path('contact/', views.contact, name="contact"),
-    # path('blog/<int:pk>/', views.BlogDetailView.as_view(), name='blog_detail'),
+    path('<int:year>/<int:month>/<int:day>/<slug:post>/', views.blog_detail, name="blog_detail"),
+    # path('blog/<int:pk>', views.blog_detail, name="blog_detail"),
     path('accounts/', include('accounts.urls')),
+    path('contactform/', include('contactform.urls')),
 ]
 
 urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
